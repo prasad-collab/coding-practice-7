@@ -54,7 +54,7 @@ app.get("/matches/:matchId/", async (request, response) => {
   const { matchId } = request.params;
   const getMatchDetailsQuery = `SELECT * FROM match_details WHERE match_id=${matchId}`;
   const getMatchDetails = await db.all(getMatchDetailsQuery);
-  response.send(convertMatchDBObjectToResponseObject(getMatchDetails));
+  response.send(getMatchDetails);
 });
 
 //return match of players
