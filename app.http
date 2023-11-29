@@ -2,11 +2,11 @@ GET http://localhost:3011/players/
 
 ###
 
-GET http://localhost:3011/players/:1/
+GET http://localhost:3011/players/6/
 
 ###
 
-PUT http://localhost:3011/players/:2/
+PUT http://localhost:3011/players/2/
 Content-Type: application/json
 
 {
@@ -15,18 +15,18 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3011/matches/:1/
+GET http://localhost:3011/matches/1/
 
 ###
 
-GET http://localhost:3011/players/:1/matches
+GET http://localhost:3011/players/1/matches
 
 ###
 
-GET http://localhost:3011/matches/:1/players
+GET http://localhost:3011/matches/1/players
 
 ###
 
-GET http://localhost:3011/players/:3/playerScores
+GET http://localhost:3011/players/3/playerScores
 
 ###

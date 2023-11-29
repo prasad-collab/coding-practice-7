@@ -23,11 +23,22 @@ const initializeDbAndServer = async () => {
   }
 };
 initializeDbAndServer();
+
+const convertDbObjectToResponseObjectPlayer = (dbObject) => {
+  return {
+    playerId: dbObject.player_id,
+    playerName: dbObject.player_name,
+  };
+};
 //get player details
 app.get("/players/", async (request, response) => {
   const getPlayersQuery = `SELECT * FROM player_details`;
   const getPlayers = await db.all(getPlayersQuery);
-  response.send(getPlayers);
+  response.send(
+    getPlayers.map((eachPlayer) =>
+      convertDbObjectToResponseObjectPlayer(eachPlayer)
+    )
+  );
 });
 //get player Details based on playerId
 app.get("/players/:playerId/", async (request, response) => {
